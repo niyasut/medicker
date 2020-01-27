@@ -9,6 +9,9 @@ algorithm for automatic information extraction was developed.
 In this research,the medical prescription convert data from medical reports into digital format and
 techniques to paperless prescription on the basis of previous health data such as medicines,
 scanning reports,and lab reports.
+
+
+
 In this technology there are 5 modules are including for Doctors,Patients,Pharmacy,Labs and
 Scanning centres. The Doctors can view the patient previous health data such as lab
 reports,scanning details and previous medicines details. And they can update the patient current
