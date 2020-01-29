@@ -10,7 +10,7 @@
         <hr class="my-2">
         <p>More info</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Click here</a>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Click her</a>
         </p>
     </div>
 </div>
