@@ -34,7 +34,7 @@
             @yield('content')
         </div>
         <nav class="container navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">All Right Reserved by NacroSoft Technologies</a>
+  <a class="navbar-brand" href="#">All Right Reserved by Medicker</a>
 </nav>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
