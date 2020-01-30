@@ -33,3 +33,6 @@ Route::get('dlogin', function(){
     return view('dlogin');
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
