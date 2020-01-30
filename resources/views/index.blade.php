@@ -10,7 +10,7 @@
         <hr class="my-2">
         <p>dfgsdfsdfsdfsd sfsdfsdfsdf sdfsdfsdfdf fsdfsdfsdf dfsdfsdfsdff wsfsdfsfdf fwfsdfsdfsdfd ffefefd ffsdsdfsdv</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Click her</a>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Click here</a>
         </p>
     </div>
 </div>

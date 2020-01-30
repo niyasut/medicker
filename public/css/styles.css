@@ -1,0 +1,37 @@
+body{
+
+   font-family: sans-serif;
+   color: black !important;
+}
+
+#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.navbar{
+    background-image: linear-gradient(to right ,#34077c,#34077c);
+    padding: 0 !important;
+}
+.navbar-brand img{
+    height: 40px;
+    padding-left: 20px;
+
+}
+.navbar-nav li{
+    padding: 0 10px;
+
+}
+.navbar-nav li a{
+ color: rgb(255, 255, 255) !important;
+ font-weight: 600;
+ float: right;
+ text-align: left;
+}
+.fa-bars{
+    color: blanchedalmond;
+    font-size: 30px !important;
+}
+.navbar toggler{
+    outline: none !important;
+}
