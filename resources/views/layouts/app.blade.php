@@ -41,8 +41,11 @@
 <div class="container">
             @yield('content')
         </div>
-        <nav class="container navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">All Right Reserved by Medicker</a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">All rights reserved by medicker</a>
+            </li>
 </nav>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
