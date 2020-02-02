@@ -2,6 +2,7 @@ body{
 
    font-family: sans-serif;
    color: black !important;
+   padding-bottom: 50px;
 }
 /* ---------------Navigation Bar----------------------- */
 #nav-bar{
