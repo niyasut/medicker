@@ -43,7 +43,7 @@
 </section>
 
             @yield('content')
-        
+         
         <nav class="navbar fixed-bottom">
           <a class="navbar-brand" href="#">Copyright © 2019. Medicker. All Right Reserved</a>
         </nav>

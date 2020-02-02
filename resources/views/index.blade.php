@@ -3,7 +3,7 @@
 
 @section('content')
 
-  
+  <section id="slider">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -42,14 +42,19 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+</section>
 
+<section id="about">
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Welcome To Medicker</h1>
       <p class="lead">Complete a simple visit on your phone or computer and get treated today.</p>
     </div>
   </div>
+</section>
 
+  <section id="services">
+<div class="medicker-details">
   <div class="card-group">
     <div class="card">
       <img src="assets/doctor-with-computer.jpg" class="card-img-top" alt="...">
@@ -73,12 +78,9 @@
         <h5 class="card-title">Our Patients Love Us</h5>
         <p class="card-text">medicker maintains a 100% patient satisfaction rating. never losing your medical data forever</p>
       </div>
-     
+    </section>
     </div>
   </div>
-
-
-
-
+</div>
 
 @endsection
