@@ -16,34 +16,37 @@
   <body>
     <section id="nav-bar">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand"><img src="assets/logo.png" alt=""></a>
+        <a class="navbar-brand"><img src="assets/logo.png" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link fa fa-home" href="/" > Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about">About</a>
+              <a class="nav-link fa fa-info-circle" href="about"> About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="faq">FAQ</a>
+              <a class="nav-link fa fa-question-circle" href="faq"> FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact">Contact</a>
+              <a class="nav-link fa fa-address-book" href="contact"> Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fa fa-sign-in" href="login"> Login</a>
             </li>
           </ul>
         </div>
       </nav>
 </section>
-<div class="container">
+
             @yield('content')
-        </div>
-        <nav class="container navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">All Right Reserved by Medicker</a>
-</nav>
+        
+        <nav class="navbar fixed-bottom">
+          <a class="navbar-brand" href="#">Copyright © 2019. Medicker. All Right Reserved</a>
+        </nav>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -3,7 +3,7 @@ body{
    font-family: sans-serif;
    color: black !important;
 }
-
+/* ---------------Navigation Bar----------------------- */
 #nav-bar{
     position: sticky;
     top: 0;
@@ -34,4 +34,22 @@ body{
 }
 .navbar toggler{
     outline: none !important;
+}
+.fixed-bottom a{
+    color: rgb(255, 255, 255);
+}
+
+/* ----------Slider---------------- */
+
+.carousel-item{
+    /* height: 100vh;
+    min-height: 300px; */
+    background: no-repeat center scroll;
+    -webit-background-size:cover;
+    background-size: cover;
+}
+.carousel-caption{
+    bottom: 220px;
+    color: rgb(7, 218, 255);
+
 }
