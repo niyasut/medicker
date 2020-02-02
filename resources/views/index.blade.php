@@ -3,19 +3,6 @@
 
 @section('content')
 
-{{-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-          <img src="https://i.pinimg.com/originals/12/30/a8/1230a85956d3c650995bcefc032536d4.png" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://isccmdelhi.com/uploads/sliders/slider21.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://doctor-carter.seaside-themes.com/wp-content/uploads/revslider/1111/bg-01.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
-  </div> --}}
   
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
