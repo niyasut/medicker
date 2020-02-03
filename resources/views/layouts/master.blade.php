@@ -23,20 +23,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
+            
             <li class="nav-item">
-              <a class="nav-link fa fa-home" href="/" > Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fa fa-info-circle" href="about"> About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fa fa-question-circle" href="faq"> FAQ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fa fa-address-book" href="contact"> Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fa fa-sign-in" href="login"> Login</a>
+              {{-- <a class="nav-link fa fa-sign-in" href="logout"> LogOut</a> --}}
+              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                Logout
+            </a>    
+            <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
             </li>
           </ul>
         </div>

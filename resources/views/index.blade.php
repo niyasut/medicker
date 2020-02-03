@@ -10,7 +10,7 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
-    <div class="carousel-inner">
+    <div class="carousel-inner animated flip">
       <div class="carousel-item active">
         <img src="assets/slider/bg1.png" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
@@ -45,7 +45,7 @@
 </section>
 
 <section id="about">
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid animated  rotateIn delay-2s">
     <div class="container">
       <h1 class="display-4">Welcome To Medicker</h1>
       <p class="lead">Complete a simple visit on your phone or computer and get treated today.</p>
