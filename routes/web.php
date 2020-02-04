@@ -38,6 +38,10 @@ Route::get('faq', function () {
     return view('faq');
 });
 
+Route::get('patient_id_search', function () {
+    return view('doctor/patient_id_search');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('Dashboard');

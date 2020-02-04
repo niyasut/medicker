@@ -82,3 +82,25 @@ body{
 .logincard{
     padding-top: 100px;
 }
+.patientsearchpage .card{
+    padding-top: 200px; 
+}
+
+
+
+.patientsearchpage .card-header{
+    text-align: center;
+    font-weight: bold;
+    background-image: linear-gradient(#34077c,#34077c);
+    border-radius: 50px;
+    color: cornsilk;
+
+}
+.patientsearchpage .btn {
+    background-color: #34077c;
+    color: cornsilk;
+}
+.patientsearchpage .input-group-btn{
+    padding-right: 200%;
+    
+}
