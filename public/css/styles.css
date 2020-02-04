@@ -83,7 +83,7 @@ body{
     padding-top: 100px;
 }
 .patientsearchpage .card{
-    padding-top: 200px; 
+    padding-top: 10px; 
 }
 
 
@@ -103,4 +103,18 @@ body{
 .patientsearchpage .input-group-btn{
     padding-right: 200px;
     
+    
+}
+.niyass{
+
+    padding-left: 50%;
+    
+}
+.dashmenu{
+    
+    color: indigo;
+}
+.dashmenu a{
+    background-color: rgb(75, 75, 75);
+    color: rgb(255, 255, 255);
 }

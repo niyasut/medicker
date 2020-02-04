@@ -2,6 +2,33 @@
 @section('title', ' - Patient Id Search')
 @section('content')
 
+<section class="patientsearchpage">
+  <div class="card">
+    <div class="card-header">
+       Hi Doctor
+    </div>
+    <div class="card-body">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="assets/doctor-avatar-icon-medical-health.jpg" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-title">Dr Smith</h2>
+              <h5 class="card-text">MBBS,MD</h5>
+              <h5 class="card-text">Email: doctor@medicker.com</h5>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+
+    </div>
+  </div>
+</section>
+
 
 <section class="patientsearchpage">
   <div class="card">
@@ -19,7 +46,7 @@
             <div class="niyass">
             <div class="input-group-btn">
                 <button class="btn btn-default" type="submit">
-                    <i class="glyphicon glyphicon-search">submit</i>
+                    <b class="glyphicon glyphicon-search">submit</b>
                 </button>
               </div>
             </div>
