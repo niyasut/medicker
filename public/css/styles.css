@@ -58,7 +58,7 @@ body{
 }
 #about .jumbotron{
     /* background-color: #042236; */
-    background-image: linear-gradient(rgb(47, 0, 255),#0c8585);
+    background-image: linear-gradient(rgb(252, 251, 255),#6d8888);
     border-radius: 10px;
     text-align: center;
 }
