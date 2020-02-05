@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2020 at 11:15 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Feb 05, 2020 at 07:29 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,9 +45,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `usertype`, `created_at`, `updated_at`) VALUES
-(1, 'nabeel kt', 'nabeelkt111@gmail.com', NULL, '$2y$10$TS2lXUX/EG9f248.6ghF1.N9MkbtC6YKuhh.TRZVFXdpcX0.cvVv.', 'yHJwfsbRKz9oB1Dfs3aGrIf7E545kzu6KlGmmCvEWjcVpbfit1naeGiWAprG', 'doctor', '2020-01-30 23:33:25', '2020-01-30 23:33:25'),
+(1, 'nabeel kt', 'nabeelkt111@gmail.com', NULL, '$2y$10$TS2lXUX/EG9f248.6ghF1.N9MkbtC6YKuhh.TRZVFXdpcX0.cvVv.', 'FrKwXndKy3Osh4OmDadscAFVNCnd098JFK9uptOaZrvNSACNrq0TsACFQk9j', 'doctor', '2020-01-30 23:33:25', '2020-01-30 23:33:25'),
 (2, 'niyasut', 'niyasut@gmail.com', NULL, '$2y$10$SRkISqna7uP27wiRAt2rse.6fngx2Y2uHNV.f5MwwokCEC1SpIMWK', NULL, 'admin', '2020-02-05 01:22:19', '2020-02-05 01:22:19'),
-(3, 'irfan k', 'irfanvalnchery786@gmail.com', NULL, '$2y$10$GjRmlclEimQ9yLJSL48P4Op7AsU1AMJ6w/6XVAMfqdZIwnL1XbBYe', NULL, 'patient', '2020-02-05 02:48:41', '2020-02-05 02:48:41');
+(1234567890, 'irfan k', 'irfanvalnchery786@gmail.com', NULL, '$2y$10$GjRmlclEimQ9yLJSL48P4Op7AsU1AMJ6w/6XVAMfqdZIwnL1XbBYe', NULL, 'patient', '2020-02-05 02:48:41', '2020-02-05 02:48:41'),
+(1234567891, 'admin', 'admin@gmail.com', NULL, '$2y$10$O9ISMSsqv.x/T/T4H1lXJOO49nB/ziWIrDmaQ9tCXUep9BuR.jeDi', NULL, '', '2020-02-05 07:41:17', '2020-02-05 07:41:17');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +68,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1234567892;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
