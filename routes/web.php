@@ -51,3 +51,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('Dashboard');
 
 route::group(['middleware' => ['auth','admin']], function(){});
+route::group(['middleware' => ['auth','admin']], function(){});

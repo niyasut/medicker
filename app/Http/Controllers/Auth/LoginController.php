@@ -34,10 +34,13 @@ class LoginController extends Controller
             return 'patient_id_search';
             
         }
-        else
+        elseif(auth::user()->usertype=='admin'){
+            return 'doctor_dashboard';
+
+        }else
         {
 
-        return 'home';
+        return 'patient_dashboard';
 
         }
 

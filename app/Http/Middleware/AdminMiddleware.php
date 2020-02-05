@@ -20,8 +20,12 @@ class AdminMiddleware
             return $next($request);
 
         }
+        elseif(Auth::user()->usertype =='admin'){
+            return $next($request);
+
+        }
         else{
-            return redirect('contact')
+            return redirect('index');
         }
         
     }
