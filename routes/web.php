@@ -37,6 +37,8 @@ Route::get('dlogin', function(){
 Route::get('faq', function () {
     return view('faq');
 });
+// ..............................Login Controller.......................................
+
 
 Route::get('patient_id_search', function () {
     return view('doctor/patient_id_search');
@@ -50,9 +52,46 @@ Route::get('patient_dashboard', function () {
     return view('patient/patient_dashboard');
 });
 
+Route::get('admin_dashboard', function () {
+    return view('admin/admin_dashboard');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('Dashboard');
 
-route::group(['middleware' => ['auth','admin']], function(){});
-route::group(['middleware' => ['auth','admin']], function(){});
+
+
+
+
+ route::group(['middleware' => ['auth','admin']], function(){
+
+// .......................Showing Auth Needed.........................
+
+
+
+
+    Route::get('/patient_id_search', 'HomeController@index');
+
+    
+
+    Route::get('patient_id_search', function () {
+        return view('doctor/patient_id_search');
+    });
+    
+    Route::get('doctor_dashboard', function () {
+        return view('doctor/doctor_dashboard');
+    });
+    
+    Route::get('patient_dashboard', function () {
+        return view('patient/patient_dashboard');
+    });
+    
+    Route::get('admin_dashboard', function () {
+        return view('admin/admin_dashboard');
+    });
+    
+
+
+
+ });

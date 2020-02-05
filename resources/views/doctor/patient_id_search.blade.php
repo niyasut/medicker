@@ -5,7 +5,7 @@
 <section class="patientsearchpage">
   <div class="card">
     <div class="card-header">
-       Hi Doctor
+       Hi {{Auth::user()->name }}
     </div>
     <div class="card-body">
       <div class="card mb-3" style="max-width: 540px;">
@@ -15,9 +15,13 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h2 class="card-title">Dr Smith</h2>
+              
+                  
+            
+              <h2 class="card-title">{{Auth::user()->name }}</h2>
+             
               <h5 class="card-text">MBBS,MD</h5>
-              <h5 class="card-text">Email: doctor@medicker.com</h5>
+              <h5 class="card-text">{{Auth::user()->email }}</h5>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
