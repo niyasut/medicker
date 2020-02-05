@@ -19,8 +19,11 @@
                   
             
               <h2 class="card-title">{{Auth::user()->name }}</h2>
+             @foreach ($doctors as $row)
+                 
              
-              <h5 class="card-text">MBBS,MD</h5>
+              <h5 class="card-text">{{$row->degree}}</h5>
+              @endforeach
               <h5 class="card-text">{{Auth::user()->email }}</h5>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>

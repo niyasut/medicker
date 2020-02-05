@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\doctor;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::All();
-        return view('doctor.patient_id_search')->with('users',$users);
+        // $users = User::All();
+        $doctors = doctor::All();
+        return view('doctor.patient_id_search',['doctors'=>$doctors]);
+        // return view('doctor.patient_id_search')->with('users',$users);
     }
 }
