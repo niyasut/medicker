@@ -46,6 +46,10 @@ Route::get('doctor_dashboard', function () {
     return view('doctor/doctor_dashboard');
 });
 
+Route::get('patient_dashboard', function () {
+    return view('patient/patient_dashboard');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('Dashboard');
