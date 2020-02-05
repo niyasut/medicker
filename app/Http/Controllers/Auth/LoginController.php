@@ -45,6 +45,9 @@ class LoginController extends Controller
         return 'patient_dashboard';
 
         }
+        else{
+            return 'patient_dashboard';
+        }
 
 
     }
