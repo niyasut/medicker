@@ -24,6 +24,10 @@ class AdminMiddleware
             return $next($request);
 
         }
+        elseif(Auth::user()->usertype =='patient'){
+            return $next($request);
+
+        }
         else{
             return redirect('index');
         }
