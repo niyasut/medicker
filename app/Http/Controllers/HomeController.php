@@ -30,5 +30,6 @@ class HomeController extends Controller
         return view('doctor.patient_id_search',['doctors'=>$doctors]);
         // return view('doctor.patient_id_search')->with('users',$users);
         $result = doctors_details::with('degree')->get();
+        // return view('doctor.patient_id_search',['result'=>$result]);
     }
 }

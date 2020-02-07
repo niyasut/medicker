@@ -25,7 +25,7 @@
               <h5 class="card-text">{{$row->degree}}</h5>
               @endforeach
               <h5 class="card-text">{{Auth::user()->email }}</h5>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago{{ $result }}</small></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
         </div>
