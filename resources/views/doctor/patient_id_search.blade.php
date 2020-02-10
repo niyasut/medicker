@@ -18,19 +18,16 @@
               
                   
             
-              <h2 class="card-title">{{Auth::user()->name }}</h2>
-             @foreach ($doctors as $row)
-                 
-             
-              <h5 class="card-text">{{$row->degree}}</h5>
-              @endforeach
-              <h5 class="card-text">{{Auth::user()->email }}</h5>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago{{ $result }}</small></p>
+              <h2 class="card-title">{{Auth::user()->name}}</h2>
+              <h6 class="card-text">Qualification :{{Auth::user()->doctor->degree }} ,{{Auth::user()->doctor->specialization }} </h6>
+              <h6 class="card-text">Email :{{Auth::user()->email }}</h6>
+              <h6 class="card-text">Mobile number :{{Auth::user()->doctor->phone_number }}</h6>
+              <h6 class="card-text">Mobile number :{{Auth::user()->doctor->hospital }}</h6>
             </div>
           </div>
         </div>
       </div>
-       
+
 
     </div>
   </div>
@@ -46,14 +43,16 @@
       
         <form>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Enter Patient Id">
+              <input type="text" class="form-control" placeholder="Enter Patient Id" name="patientidsearch">
               
             </div>
             <br>
+            {{-- @error('patientidsearch'){{$message}} @enderror --}}
+         
             <div class="niyass">
             <div class="input-group-btn">
                 <button class="btn btn-default" type="submit">
-                    <b class="glyphicon glyphicon-search">submit</b>
+                    <b class="glyphicon glyphicon-search" onclick="patientidsearch()">submit</b>
                 </button>
               </div>
             </div>
@@ -62,6 +61,14 @@
     </div>
   </div>
 </section>
+<script>
+function patientidsearch() {
+  alert ("Enter the Patient Id");
+  
+}
 
+</script>
 
 @endsection
+
+

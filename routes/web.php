@@ -89,6 +89,8 @@ Route::get('/home', 'HomeController@index')->name('Dashboard');
 
 
     Route::get('/patient_id_search', 'HomeController@index');
+    route::get('/Doctors_Dashboard', 'HomeController@patientidsearch');
+
 
 
 
