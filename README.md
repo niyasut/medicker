@@ -1,6 +1,6 @@
 
 
-## About Medicker
+## About Medicker 
 
 Medical reports contain large amounts of clinical information which is not easily mined due to its
 unstructured format. In addition, the medical terminology is context sensitive and varies between
