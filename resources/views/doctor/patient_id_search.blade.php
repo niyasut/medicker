@@ -41,9 +41,11 @@
     </div>
     <div class="card-body">
       
-        <form>
+    {{-- <form method="POST" action="{{url("\doctor.doctor_dashboard")}}"> --}}
+      <form  action={{'doctor_dashboard'}} method="GET">
+        {{ csrf_field() }}
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Enter Patient Id" name="patientidsearch">
+            <input type="text" class="form-control" placeholder="Enter Patient Id" name="patientidsearch" value="{{ request()->input('patientidsearch')}}">
               
             </div>
             <br>
@@ -56,18 +58,28 @@
                 </button>
               </div>
             </div>
+            {{-- Error Message --}}
+            @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
           </form>
 
     </div>
   </div>
 </section>
-<script>
+{{-- <script>
 function patientidsearch() {
   alert ("Enter the Patient Id");
   
 }
 
-</script>
+</script> --}}
 
 @endsection
 

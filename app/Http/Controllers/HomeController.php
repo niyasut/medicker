@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\User;
 use App\doctors_details;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Console\Input\Input;
 
 class HomeController extends Controller
 {
@@ -25,29 +28,35 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-
-
-
-
-        // $users = User::All();
-        //  $doctors = doctors_details::All();
         
-    //    $doctorss = doctors_details::find(1)->degree;
-    // return user::find(1)->doctor;
+      
 
-     return view('doctor.patient_id_search');
-        // return view('doctor.patient_id_search')->with('doctorss',$doctorss);
+
+        return view('doctor.patient_id_search');
+
+      
      
     }
-    public function patientidsearch(){
-        
-        $patientidsearchkey =\request::get('patientidsearch');
-
-        $patient = User::where('id', 'like','%' .$patientidsearchkey. '%');
-        return view('doctor.doctor_dashboard',['patient'=>$patient]);
 
 
-        
-    }
+
+
+    public function patientidsearch(Request $request){
+
+        $request->validate([
+            'patientidsearch' => 'required|min:1|max:10',
+            
+            ]);
+
+        $pidget = request()->input('patientidsearch');
+
+        $pidsearch = User::where('id',$pidget)->get();
+
+       
+        return view('doctor.doctor_dashboard')->with('pidsearch',$pidsearch);
+    
+
+       
+    } 
+    
 }

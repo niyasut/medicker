@@ -44,9 +44,7 @@ Route::get('patient_id_search', function () {
     return view('doctor/patient_id_search');
 });
 
-Route::get('doctor_dashboard', function () {
-    return view('doctor/doctor_dashboard');
-});
+
 
 Route::get('patient_dashboard', function () {
     return view('patient/patient_dashboard');
@@ -60,9 +58,9 @@ Route::get('admin_dashboard', function () {
         return view('doctor/patient_id_search');
     });
     
-    Route::get('doctor_dashboard', function () {
-        return view('doctor/doctor_dashboard');
-    });
+    // Route::get('doctor_dashboard', function () {
+    //     return view('doctor/doctor_dashboard');
+    // });
     
     Route::get('patient_dashboard', function () {
         return view('patient/patient_dashboard');
@@ -89,7 +87,8 @@ Route::get('/home', 'HomeController@index')->name('Dashboard');
 
 
     Route::get('/patient_id_search', 'HomeController@index');
-    route::get('/Doctors_Dashboard', 'HomeController@patientidsearch');
+    // Route::get('/patient_id_search', 'HomeController@patientidsearch');
+    route::get('/doctor_dashboard', 'HomeController@patientidsearch');
 
 
 

@@ -39,8 +39,21 @@ class User extends Authenticatable
 
 
     public function doctor(){
+        
+       
+        
 
-        return $this->hasOne('App\doctors_details','doctors_id', 'id');
-
+         return $this->hasOne('App\doctors_details','doctors_id', 'id');
+        
     }
+    public function patient(){
+        
+       
+        
+
+        return $this->hasOne('App\Patient_details','patient_id', 'id');
+       
+   }
+   
 }
+
