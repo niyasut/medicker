@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 @section('title', ' - Patient Id Search')
 @section('content')
 
