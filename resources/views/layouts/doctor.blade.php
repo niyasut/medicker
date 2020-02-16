@@ -9,11 +9,11 @@
 
   <link href="{{ asset('css/styles_dashboard.css') }}" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
  
-  <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 
-  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -35,7 +35,7 @@
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3" action={{'doctor_dashboard'}} method="GET">
+    <form class="form-inline ml-3" action="{{'patient_details'}}" method="GET">
       {{ csrf_field() }}
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" value="{{ request()->input('patientidsearch')}}"  name="patientidsearch" aria-label="Search">
@@ -91,7 +91,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img src="{{asset('assets/logo.png')}}" alt="Medicker Logo" class="brand-image img-circle elevation-3"
+      <img src="assets/logo.png" alt="Medicker Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       {{-- <span class="brand-text font-weight-light">Medicker</span> --}}
     </a>
@@ -101,7 +101,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="/uploads/avatars/{{Auth::User()->avatar}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block"><b>{{Auth::user()->name}}</b></a>
@@ -114,7 +114,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="/admin_dashboard" class="nav-link {{ Request::path() == 'admin_dashboard' ? 'active' : '' }}">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -128,61 +128,12 @@
               {{-- <i class="nav-icon fas fa-th"></i> --}}
               <i class="nav-icon fas fa-user-circle "></i>
               <p>
-                Account
+                {{Auth::user()->name}} Profile
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="add_doctor" class="nav-link {{ Request::path() == 'add_doctor' ? 'active' : '' }}">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="far fa-circle nav-icon"></i>
-              <p>
-                Add Doctors
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="far fa-circle nav-icon"></i>
-              <p>
-                Add Patients
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="far fa-circle nav-icon"></i>
-              <p>
-                Add Laboratory
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="far fa-circle nav-icon"></i>
-              <p>
-                Add Admin
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/users" class="nav-link {{ Request::path() == 'users' ? 'active' : '' }} ">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="far fa-circle nav-icon"></i>
-              <p>
-                Users
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
+         
          
         
             </ul>
@@ -233,7 +184,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2019-2020 <a href="http://medicker.com">Medicker.com</a>.</strong>
+    <strong>Copyright &copy; 2019-2020 <a href="http://meedicker.com">Medicker.com</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0
@@ -244,27 +195,27 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="{{asset('dist/js/adminlte.js')}}"></script>
+<script src="dist/js/adminlte.js"></script>
 
 <!-- OPTIONAL SCRIPTS -->
-<script src="{{asset('dist/js/demo.js')}}"></script>
+<script src="dist/js/demo.js"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
-<script src="{{asset('plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
-<script src="{{asset('plugins/raphael/raphael.min.js')}}"></script>
-<script src="{{asset('plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
-<script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
+<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="plugins/raphael/raphael.min.js"></script>
+<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
 <!-- ChartJS -->
-<script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
+<script src="plugins/chart.js/Chart.min.js"></script>
 
 <!-- PAGE SCRIPTS -->
-<script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+<script src="dist/js/pages/dashboard2.js"></script>
 </body>
 </html>

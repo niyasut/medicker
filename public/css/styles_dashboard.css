@@ -1,0 +1,16 @@
+body{
+    font-family: Georgia;
+    color: black !important;
+    font-weight: bold;
+    
+}
+
+
+/*    doctor search patient id */
+.pidinputsearch button{
+
+    color: brown;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}

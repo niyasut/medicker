@@ -3,9 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 
-class AdminMiddleware
+class PatientMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,16 +15,14 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-            if(Auth::user()->usertype =='admin'){
-                return $next($request);
+        if(Auth::user()->usertype =='patient'){
+            return $next($request);
 
-            }
-
-       
-        else{
-            return redirect('/');
         }
 
-        
+   
+            else{
+                return redirect('/');
+            }
     }
 }

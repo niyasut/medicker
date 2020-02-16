@@ -2,9 +2,11 @@
 
 namespace App;
 
+use App\doctors_details;
+use Illuminate\Support\Facades\App;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -41,7 +43,7 @@ class User extends Authenticatable
     public function doctor(){
         
        
-        
+        // return $this->hasOne('App\doctors_details');
 
          return $this->hasOne('App\doctors_details','doctors_id', 'id');
         

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
+
 class LoginController extends Controller
 {
     /*
@@ -29,24 +31,24 @@ class LoginController extends Controller
     // protected $redirectTo = RouteServiceProvider::HOME;
     protected function redirectTo()
     {
-        if(auth::user()->usertype=='doctor')
+        if(auth::user()->usertype == 'doctor')
         {
-            return 'patient_id_search';
+            return 'doctor_dashboard';
             
         }
-        elseif(auth::user()->usertype=='admin')
+        elseif(auth::user()->usertype == 'admin')
         {
             return 'admin_dashboard';
 
         }
-        elseif(auth::user()->usertype=='patient')
+        elseif(auth::user()->usertype == 'patient')
         {
 
         return 'patient_dashboard';
 
         }
         else{
-            return 'patient_dashboard';
+            return '/';
         }
 
 

@@ -1,24 +1,35 @@
-@extends('layouts.admin')
-@section('title', ' - Patient Id Search')
+@extends('layouts.doctor')
+@section('title', ' - Dashboard')
 @section('content')
-
+@section('name', 'Dashboard')
 <section class="patientsearchpage">
   <div class="card">
     <div class="card-header">
-       Hi {{Auth::user()->name }}
+     <b>  Hi {{$greetings}} </b>
     </div>
     <div class="card-body">
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <img src="assets/doctor-avatar-icon-medical-health.jpg" class="card-img" alt="...">
+            <img src="/uploads/avatars/{{Auth::User()->avatar}}" class="card-img" alt="avatar" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px; ">
+
+            <form enctype="multipart/form-data" action="/doctor_dashboard" method="post">
+              {{ csrf_field() }}
+              <label for="Update profile image">Update profile image</label>
+              <input type="file" name="avatar" id="avatar">
+              <button type="submit">submit</button>
+
+          </form>
+                
+
           </div>
           <div class="col-md-8">
             <div class="card-body">
               
-                  
+         
             
-              <h2 class="card-title">{{Auth::user()->name}}</h2>
+              <h6 class="card-text">Doctor Name : {{Auth::user()->name}}</h6>
+
               <h6 class="card-text">Qualification :{{Auth::user()->doctor->degree }} ,{{Auth::user()->doctor->specialization }} </h6>
               <h6 class="card-text">Email :{{Auth::user()->email }}</h6>
               <h6 class="card-text">Mobile number :{{Auth::user()->doctor->phone_number }}</h6>
@@ -37,22 +48,22 @@
 <section class="patientsearchpage">
   <div class="card">
     <div class="card-header">
-       Enter Patient Id Number
+     <b>  Enter patient id </b>
     </div>
     <div class="card-body">
       
     {{-- <form method="POST" action="{{url("\doctor.doctor_dashboard")}}"> --}}
-      <form  action={{'doctor_dashboard'}} method="GET">
+      <form  action={{'patient_details'}} method="GET">
         {{ csrf_field() }}
             <div class="input-group">
-            <input type="text" class="form-control" placeholder="Enter Patient Id" name="patientidsearch" value="{{ request()->input('patientidsearch')}}">
+            <input type="search" class="form-control" placeholder="Enter your patient id" name="patientidsearch" value="{{ request()->input('patientidsearch')}}" aria-label="Search">
               
             </div>
             <br>
             {{-- @error('patientidsearch'){{$message}} @enderror --}}
          
-            <div class="niyass">
-            <div class="input-group-btn">
+            <div class="pidinputsearch">
+            <div class="col-md-15 text-center">
                 <button class="btn btn-default" type="submit">
                     <b class="glyphicon glyphicon-search" onclick="patientidsearch()">submit</b>
                 </button>

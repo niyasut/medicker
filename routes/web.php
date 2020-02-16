@@ -39,63 +39,35 @@ Route::get('faq', function () {
 });
 // ..............................Login Controller.......................................
 
+ Auth::routes();
+// Auth::routes(['register' => false]);
+// Auth::routes(['verify' => true]);
 
-Route::get('patient_id_search', function () {
-    return view('doctor/patient_id_search');
+
+
+
+//  .....................Login with user-type..........................
+// ......................admin auth........................
+ route::group(['middleware' => ['auth','admin']], function(){
+
+    Route::get('/admin_dashboard', 'AdminController@admin');
+    route::get('add_doctor','AdminController@doctor');
+    route::get('/users', 'AdminController@users');
+    route::get('/user_edit/{id}', 'AdminController@useredit');
+    route::put('/user_update/{id}','AdminController@userupdate');
+    route::delete('/user_delete/{id}','AdminController@userdelete');
+    route::post('/add_newuser','AdminController@addnewuser');
+ });
+// ......................Doctor auth........................
+ route::group(['middleware' => ['auth','doctor']], function(){
+    Route::get('/doctor_dashboard', 'HomeController@index');
+    route::get('/patient_details', 'HomeController@patientidsearch');
+    Route::post('/doctor_dashboard', 'HomeController@updateavatar');
 });
-
-
-
-Route::get('patient_dashboard', function () {
-    return view('patient/patient_dashboard');
-});
-
-Route::get('admin_dashboard', function () {
-    return view('admin/admin_dashboard');
-});
-
-  Route::get('patient_id_search', function () {
-        return view('doctor/patient_id_search');
-    });
-    
-    // Route::get('doctor_dashboard', function () {
-    //     return view('doctor/doctor_dashboard');
-    // });
-    
+// ......................patient auth........................
+route::group(['middleware' => ['auth','patient']], function(){
     Route::get('patient_dashboard', function () {
         return view('patient/patient_dashboard');
     });
     
-    Route::get('admin_dashboard', function () {
-        return view('admin/admin_dashboard');
-    });
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('Dashboard');
-
-
-
-
-
- route::group(['middleware' => ['auth','admin']], function(){
-
-// .......................Showing Auth Needed.........................
-
-
-
-
-    Route::get('/patient_id_search', 'HomeController@index');
-    // Route::get('/patient_id_search', 'HomeController@patientidsearch');
-    route::get('/doctor_dashboard', 'HomeController@patientidsearch');
-
-
-
-
-  
-    
-
-
-
- });
+});
