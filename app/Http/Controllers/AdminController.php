@@ -73,15 +73,17 @@ class AdminController extends Controller
 
       public function addnewuser(request $request)
       {
+      
         $adduser = new User;
+      
        // $adduser->id = $request->input('addid');
         $adduser->name = $request->input('name');
         $adduser->email = $request->input('email');
         $password = $request->input('password');
          $adduser->password = Hash::make($password);
         $adduser->usertype = $request->input('usertype');
-        $adduser->doctor()->degree = 'mm';
-        $adduser->save();
+        $adduser->doctors_details()->degree = 'mm';
+       
         return redirect('/users')->with('status', 'Data added doctors details');
       }
 
