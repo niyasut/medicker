@@ -80,6 +80,7 @@ class AdminController extends Controller
         $password = $request->input('password');
          $adduser->password = Hash::make($password);
         $adduser->usertype = $request->input('usertype');
+        $adduser->doctor()->degree = 'mm';
         $adduser->save();
         return redirect('/users')->with('status', 'Data added doctors details');
       }

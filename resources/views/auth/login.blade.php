@@ -20,7 +20,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page" style="background-image: url(https://www.mdinterconnect.com/wp-content/uploads/2019/02/iStock-1023224308s.jpg);   background-repeat: no-repeat;
+<body class="hold-transition login-page" style="background-image: url({{asset('assets/login-bg.jpg')}});   background-repeat: no-repeat;
   background-position: center;  background-size: cover;">
   <style>
     
