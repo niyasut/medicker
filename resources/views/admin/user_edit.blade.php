@@ -14,6 +14,10 @@
         {{ method_field('PUT') }}
       <div class="card-body">
         <div class="form-group">
+          <label>Name</label>
+        <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{$users->email}}">
+        </div>
+        <div class="form-group">
           <label>Email address</label>
         <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{$users->email}}">
         </div>

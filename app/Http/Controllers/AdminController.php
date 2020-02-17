@@ -45,7 +45,8 @@ class AdminController extends Controller
       public function userupdate(Request $request ,$id)
       {
         $users = User::find($id);
-        $users->name = $request->input('email');
+        $users->name = $request->input('name');
+        $users->email = $request->input('email');
         $users->usertype = $request->input('usertype');
         $users->update();
         
