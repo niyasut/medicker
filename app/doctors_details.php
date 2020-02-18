@@ -3,7 +3,7 @@
 namespace App;
 
 use App\users;
-use App\doctors_details;
+
 use Illuminate\Database\Eloquent\Model;
 
 class doctors_details extends Model
