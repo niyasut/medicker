@@ -82,6 +82,7 @@ class AdminController extends Controller
         $password = $request->input('password');
          $adduser->password = Hash::make($password);
         $adduser->usertype = $request->input('usertype');
+        $adduser->id = '';
         $adduser->doctor()->degree = $request->input('degree');
         $adduser->username = $request->input('username');
           $adduser->save();
