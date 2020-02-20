@@ -11,9 +11,10 @@ class doctors_details extends Model
     public $timestamps = false;
     protected $guarded = [];
     protected $table = 'doctor_details';
-    // public function doctors_details()
-    // {
-    //   // return $this->belongsTo(users::class, 'id');
-    //   // return $this->belongsTo('App\User', 'id', 'id');
-    // }
+//     public function user()
+//     {
+//       // return $this->belongsTo(users::class, 'id');
+//       // return $this->belongsTo('App\User', 'id', 'id');
+//       return $this->belongsTo('App\User');
+//     }
 }
