@@ -75,16 +75,20 @@ class AdminController extends Controller
       {
       
         $adduser = new User;
-      
+       
        // $adduser->id = $request->input('addid');
         $adduser->name = $request->input('name');
         $adduser->email = $request->input('email');
         $password = $request->input('password');
          $adduser->password = Hash::make($password);
         $adduser->usertype = $request->input('usertype');
-        // $adduser->doctor()->degree = 'mm';
+        $adduser->id = '';
+        $adduser->doctor()->degree = $request->input('degree');
+        $adduser->username = $request->input('username');
+          $adduser->save();
        
         return redirect('/users')->with('status', 'Data added doctors details');
       }
+      
 
 }

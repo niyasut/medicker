@@ -37,6 +37,14 @@
                         <input type="email" name="email" class="form-control" id="recipient-name">
                       </div>
                       <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Degree</label>
+                        <input type="text" name="degree" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Password</label>
                         <input type="password" name="password" class="form-control" id="recipient-name">
                       </div>
