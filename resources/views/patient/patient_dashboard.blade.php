@@ -1,8 +1,9 @@
-@extends('layouts.master')
+
+@extends('layouts.patient')
 @section('title', ' - Patient Dashboard')
 @section('content')
+@section('name', 'Patient Details')
 
-<h1>Patient Dashboard</h1>
 
 
   @endsection

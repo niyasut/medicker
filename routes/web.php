@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,6 +59,11 @@ Route::get('faq', function () {
     route::put('/user_update/{id}','AdminController@userupdate');
     route::delete('/user_delete/{id}','AdminController@userdelete');
     route::post('/add_newuser','AdminController@addnewuser');
+    route::get('/listofdoctors', 'AdminController@listofdoctors');
+    route::get('/patientslist', 'AdminController@patientslist');
+    route::put('/patient_update/{id}','AdminController@patientupdate');
+    route::post('/add_newpatient','AdminController@addnewpatient');
+   
  });
 // ......................Doctor auth........................
  route::group(['middleware' => ['auth','doctor']], function(){
@@ -66,8 +73,9 @@ Route::get('faq', function () {
 });
 // ......................patient auth........................
 route::group(['middleware' => ['auth','patient']], function(){
-    Route::get('patient_dashboard', function () {
-        return view('patient/patient_dashboard');
-    });
+    Route::get('/patient_dashboard', 'PatientController@index');
+    
+    
+  
     
 });

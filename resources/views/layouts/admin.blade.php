@@ -123,62 +123,100 @@
             </a>
             
           </li>
-          <li class="nav-item">
+
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="nav-icon fas fa-user-circle "></i>
+              <i class="nav-icon fa fa-users"></i>
               <p>
-                Account
-                {{-- <span class="right badge badge-danger">New</span> --}}
+                Doctor
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/listofdoctors" class="nav-link">
+                  <i class="fa fa-user nav-icon"></i>
+                  <p>List Of Doctors</p>
+                </a>
+              </li>
+            
+            
+            </ul>
           </li>
-          <li class="nav-item">
-            <a href="add_doctor" class="nav-link {{ Request::path() == 'add_doctor' ? 'active' : '' }}">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="far fa-circle nav-icon"></i>
-              <p>
-                Add Doctors
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
+
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="far fa-circle nav-icon"></i>
+              <i class="nav-icon fa fa-users"></i>
               <p>
-                Add Patients
-                {{-- <span class="right badge badge-danger">New</span> --}}
+                Patient
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview" >
+              <li class="nav-item">
+                <a href="/patientslist" class="nav-link">
+                  <i class="fa fa-user nav-icon"></i>
+                  <p>Patient List</p>
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
+
+            <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="far fa-circle nav-icon"></i>
+              <i class="nav-icon fas fa-capsules"></i>
               <p>
-                Add Laboratory
-                {{-- <span class="right badge badge-danger">New</span> --}}
+                Drugs
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview" >
+              <li class="nav-item">
+                <a href="../mailbox/mailbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Drugs</p>
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
+
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              {{-- <i class="nav-icon fas fa-th"></i> --}}
-              <i class="far fa-circle nav-icon"></i>
+              <i class="nav-icon fa  fa-flask"></i>
               <p>
-                Add Admin
-                {{-- <span class="right badge badge-danger">New</span> --}}
+                Laboratory
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview" >
+              <li class="nav-item">
+                <a href="../mailbox/mailbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List of Laboratory</p>
+                </a>
+              </li>
+            </ul>
           </li>
+
+      
+       
           <li class="nav-item">
             <a href="/users" class="nav-link {{ Request::path() == 'users' ? 'active' : '' }} ">
               {{-- <i class="nav-icon fas fa-th"></i> --}}
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Users
+                {{-- <span class="right badge badge-danger">New</span> --}}
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/users" class="nav-link {{ Request::path() == 'users' ? 'active' : '' }} ">
+              {{-- <i class="nav-icon fas fa-th"></i> --}}
+              <i class="fa fa-user nav-icon"></i>
+              <p>
+                Profile
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
