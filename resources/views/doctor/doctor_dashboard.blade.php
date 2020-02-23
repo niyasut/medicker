@@ -66,19 +66,19 @@
 </div>
      
           {{-- Patient details --}}
-            <div class="row">
+            {{-- <div class="row"> --}}
               @foreach ($pidsearch as $pidsearch)
-              <div class="col-sm-5">
+              <div class="col-sm-15">
 
 
               <div class="card-body">
               
-          <div class="card mb-3" style="max-width: 540px;">
+          <div class="card">
             <div class="row no-gutters">
-              <div class="col-md-4">
+              <div class="col-sm-2">
                 <img src="/uploads/avatars/{{$pidsearch->avatar}}" class="card-img" alt="...">
               </div>
-          <div class="col-md-8">
+         
           <div class="card-body">
 
             <h4 class="card-title">Patient Name: {{$pidsearch->name}}</h4>
@@ -87,98 +87,86 @@
             <h6 class="card-text">Blood Group :{{$pidsearch->patient->blood_group}}</h6>
             <h6 class="card-text">Patient ID :{{$pid=request()->input('patientidsearch')}}</h6>
           </div>
-          </div>
+          
           </div>
           </div>
           </div>
     </div>
+
+
+
+
     <div class="card card-warning">
       <div class="card-header">
         <h3 class="card-title">Add new Prescription</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        <form role="form">
-          <div class="row">
-            <div class="col-sm-6">
-              <!-- text input -->
-              <div class="form-group">
-                <label>Text</label>
-                <input type="text" class="form-control" placeholder="Enter ...">
+      
+        <div class="container">
+          <div class="row clearfix">
+              <div class="col-md-12 column">
+                  <table class="table table-bordered table-hover" id="tab_logic">
+                      <thead>
+                          <tr >
+                              <th class="text-center">
+                                  #
+                              </th>
+                              <th class="text-center">
+                                Drug
+                              </th>
+                              <th class="text-center">
+                                dosage
+                              </th>
+                              <th class="text-center">
+                                frequency
+                              </th>
+                              <th class="text-center">
+                                days
+                              </th>
+                              <th class="text-center">
+                                instruction
+                              </th>
+                             
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr id='addr0'>
+                              <td>
+                              1
+                              </td>
+                              <td>
+                              <input type="text" name='user0'  placeholder='Drug' class="form-control"/>
+                              </td>
+                              <td>
+                              <input type="text" name='pass0' placeholder='dosage' class="form-control"/>
+                              </td>
+                              <td>
+                              <input type="text" name='ip0' placeholder='frequency' class="form-control"/>
+                              </td>
+                              <td>
+                              <input type="text" name='country0' placeholder='days' class="form-control"/>
+                              </td>
+                              <td>
+                                <input type="text" name='country0' placeholder='instruction' class="form-control"/>
+                                </td>
+                             
+                          </tr>
+                          <tr id='addr1'></tr>
+                      </tbody>
+                  </table>
               </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label>Text Disabled</label>
-                <input type="text" class="form-control" placeholder="Enter ..." disabled="">
-              </div>
-            </div>
           </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <!-- textarea -->
-              <div class="form-group">
-                <label>Textarea</label>
-                <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label>Textarea Disabled</label>
-                <textarea class="form-control" rows="3" placeholder="Enter ..." disabled=""></textarea>
-              </div>
-            </div>
-          </div>
-
-          <!-- input states -->
-         
-
-          <div class="row">
-            <div class="col-sm-6">
-              <!-- checkbox -->
-          
-            </div> 
-            <div class="col-sm-6">
-              <!-- radio -->
-            
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-6">
-              <!-- select -->
-              <div class="form-group">
-                <label>Select</label>
-                <select class="form-control">
-                  <option>option 1</option>
-                  <option>option 2</option>
-                  <option>option 3</option>
-                  <option>option 4</option>
-                  <option>option 5</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label>Select Disabled</label>
-                <select class="form-control" disabled="">
-                  <option>option 1</option>
-                  <option>option 2</option>
-                  <option>option 3</option>
-                  <option>option 4</option>
-                  <option>option 5</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-         
-        </form>
+          <a id="add_row" class="btn btn-default pull-left">Add Row</a>
+          <a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
       </div>
+
+    
+      
       <!-- /.card-body -->
     </div>
     @endforeach
-  </div>
+  {{-- </div> row  div --}}
 {{-- patient details end --}}
 
 
@@ -203,3 +191,4 @@
 
  
   @endsection
+  

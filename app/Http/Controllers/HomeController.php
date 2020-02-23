@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\Console\Input\Input;
 
 class HomeController extends Controller
@@ -73,6 +74,13 @@ class HomeController extends Controller
 
 
     public function patientidsearch(Request $request){
+        $patientid = $request->input('patientidsearch');
+        $pidsearch = User::where('id',$patientid)->get();
+
+
+        if( $pidsearch->isEmpty() ){
+            return Redirect::back();
+        }else{
 
         $request->validate([
             'patientidsearch' => 'required|min:1|max:10',
@@ -81,11 +89,11 @@ class HomeController extends Controller
 
         $pidget = request()->input('patientidsearch');
 
-        $pidsearch = User::where('id',$pidget)->get();
+         $pidsearch = User::where('id',$pidget)->get();
 
        
         return view('doctor.doctor_dashboard')->with('pidsearch',$pidsearch);
-    
+        }
 
        
     } 
