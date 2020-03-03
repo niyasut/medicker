@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\doctors_details;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Prescriptions;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Redirect;
@@ -110,6 +111,24 @@ class HomeController extends Controller
             $user->save();
         }
         return redirect('/doctor_dashboard');
+
+    }
+
+            public function addprescription(Request $request){
+
+               $drug = $request->input('drug');
+                // $drug = Input::get('drug');
+
+            for($i=0; $i<=count($drug);$i++)
+            {
+                $pre = new Prescriptions();
+                // $pre->id = 1;
+                $pre->pre_id = 1234567920;
+                $pre->drug = $drug[$i];    // here add [$i]
+                $pre->save();
+                return Redirect::back();
+            }
+           
 
     }
     

@@ -104,7 +104,8 @@
       <div class="card-body">
       
         <div class="container">
-          <form action="" method="post">
+          <form action="/addprescription" method="get">
+            {{csrf_field()}}
           <div class="row clearfix">
               <div class="col-md-12 column">
                   <table class="table table-bordered table-hover" id="tab_logic">
@@ -137,19 +138,19 @@
                               1
                               </td>
                               <td>
-                              <input type="text" name='user0'  placeholder='Drug' class="form-control"/>
+                              <input type="text" name='drug[]'  placeholder='Drug' class="form-control"/>
                               </td>
                               <td>
-                              <input type="text" name='pass0' placeholder='dosage' class="form-control"/>
+                              <input type="text" name='dosage[]' placeholder='dosage' class="form-control"/>
                               </td>
                               <td>
-                              <input type="text" name='ip0' placeholder='frequency' class="form-control"/>
+                              <input type="text" name='frequency[]' placeholder='frequency' class="form-control"/>
                               </td>
                               <td>
-                              <input type="text" name='country0' placeholder='days' class="form-control"/>
+                              <input type="text" name='days[]' placeholder='days' class="form-control"/>
                               </td>
                               <td>
-                                <input type="text" name='country0' placeholder='instruction' class="form-control"/>
+                                <input type="text" name='instruction[]' placeholder='instruction' class="form-control"/>
                                 </td>
                              
                           </tr>
@@ -160,6 +161,7 @@
           </div>
           <a id="add_row" class="btn btn-default pull-left">Add Row</a>
           <a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
+          <input type="submit" value="submit">
       </div>
     </form>
 

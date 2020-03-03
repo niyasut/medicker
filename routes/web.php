@@ -17,6 +17,8 @@
 //     return view('welcome');
 // });
 
+use App\Http\Controllers\HomeController;
+
 Route::get('/', function () {
     return view('index');
 });
@@ -70,6 +72,7 @@ Route::get('faq', function () {
     Route::get('/doctor_dashboard', 'HomeController@index');
     route::get('/patient_details', 'HomeController@patientidsearch');
     Route::post('/doctor_dashboard', 'HomeController@updateavatar');
+    Route::get('/addprescription','HomeController@addprescription');
 });
 // ......................patient auth........................
 route::group(['middleware' => ['auth','patient']], function(){
