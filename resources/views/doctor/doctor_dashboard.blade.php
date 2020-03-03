@@ -101,11 +101,19 @@
         <h3 class="card-title">Add new Prescription</h3>
       </div>
       <!-- /.card-header -->
+        {{-- status updated --}}
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
+    {{-- end status --}}
       <div class="card-body">
       
         <div class="container">
-          <form action="/addprescription" method="get">
+          <form action="/addprescription" method="POST">
             {{csrf_field()}}
+            {{ method_field('PUT') }}
           <div class="row clearfix">
               <div class="col-md-12 column">
                   <table class="table table-bordered table-hover" id="tab_logic">

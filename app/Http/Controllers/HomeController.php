@@ -113,22 +113,36 @@ class HomeController extends Controller
         return redirect('/doctor_dashboard');
 
     }
-
+    
             public function addprescription(Request $request){
-
+           
+                $patientid = request()->input('patientidsearch');
+                
+               
                $drug = $request->input('drug');
+               $dosage = $request->input('dosage');
+               $frequency = $request->input('frequency');
+               $days = $request->input('days');
+               $instruction = $request->input('instruction');
+               
                 // $drug = Input::get('drug');
-
-            for($i=0; $i<=count($drug);$i++)
+       
+            for($i=0; $i<count($drug); $i++)
             {
                 $pre = new Prescriptions();
+                
                 // $pre->id = 1;
-                $pre->pre_id = 1234567920;
-                $pre->drug = $drug[$i];    // here add [$i]
+                $pre->pre_id =  $patientid;
+                $pre->drug = $drug[$i];   
+                $pre->dosage = $dosage[$i];
+                $pre->frequency = $frequency[$i];  
+                $pre->days = $days[$i];  
+                $pre->instruction = $instruction[$i];    
                 $pre->save();
-                return Redirect::back();
+             
             }
            
+            return Redirect::back()->with('status', 'prescription added');
 
     }
     

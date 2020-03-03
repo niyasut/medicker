@@ -19,31 +19,31 @@
 
 use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
+    Route::get('/', function () {
     return view('index');
 });
 
-Route::get('about', function (){
+    Route::get('about', function (){
     return view('about');
 
 });
 
-Route::get('contact', function (){
+    Route::get('contact', function (){
     return view('contact');
 
 });
 
-Route::get('dlogin', function(){
+    Route::get('dlogin', function(){
     return view('dlogin');
 
 });
 
-Route::get('faq', function () {
+    Route::get('faq', function () {
     return view('faq');
 });
 // ..............................Login Controller.......................................
 
- Auth::routes();
+    Auth::routes();
 // Auth::routes(['register' => false]);
 // Auth::routes(['verify' => true]);
 
@@ -52,7 +52,7 @@ Route::get('faq', function () {
 
 //  .....................Login with user-type..........................
 // ......................admin auth........................
- route::group(['middleware' => ['auth','admin']], function(){
+    route::group(['middleware' => ['auth','admin']], function(){
 
     Route::get('/admin_dashboard', 'AdminController@admin');
     route::get('add_doctor','AdminController@doctor');
@@ -68,14 +68,14 @@ Route::get('faq', function () {
    
  });
 // ......................Doctor auth........................
- route::group(['middleware' => ['auth','doctor']], function(){
+    route::group(['middleware' => ['auth','doctor']], function(){
     Route::get('/doctor_dashboard', 'HomeController@index');
     route::get('/patient_details', 'HomeController@patientidsearch');
     Route::post('/doctor_dashboard', 'HomeController@updateavatar');
-    Route::get('/addprescription','HomeController@addprescription');
+    Route::put('/addprescription','HomeController@addprescription');
 });
 // ......................patient auth........................
-route::group(['middleware' => ['auth','patient']], function(){
+    route::group(['middleware' => ['auth','patient']], function(){
     Route::get('/patient_dashboard', 'PatientController@index');
     
     
