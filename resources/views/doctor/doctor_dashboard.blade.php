@@ -104,6 +104,7 @@
       <div class="card-body">
       
         <div class="container">
+          <form action="" method="post">
           <div class="row clearfix">
               <div class="col-md-12 column">
                   <table class="table table-bordered table-hover" id="tab_logic">
@@ -160,6 +161,7 @@
           <a id="add_row" class="btn btn-default pull-left">Add Row</a>
           <a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
       </div>
+    </form>
 
     
       
