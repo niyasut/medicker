@@ -115,8 +115,9 @@ class HomeController extends Controller
     }
     
             public function addprescription(Request $request){
-           
-                $patientid = request()->input('patientidsearch');
+             
+               $patientid =   request()->input('$pids');
+                // $patientidss = request()->input('patientidsearch');
                 
                
                $drug = $request->input('drug');
@@ -129,6 +130,7 @@ class HomeController extends Controller
        
             for($i=0; $i<count($drug); $i++)
             {
+                
                 $pre = new Prescriptions();
                 
                 // $pre->id = 1;
@@ -143,6 +145,7 @@ class HomeController extends Controller
             }
            
             return Redirect::back()->with('status', 'prescription added');
+            // return redirect('dd ($patientid)');
 
     }
     

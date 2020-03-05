@@ -38,7 +38,7 @@
     <form class="form-inline ml-3" action="{{'patient_details'}}" method="GET">
       {{ csrf_field() }}
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" value="{{ request()->input('patientidsearch')}}"  name="patientidsearch" aria-label="Search">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" value="{{$pids= request()->input('patientidsearch')}}"  name="patientidsearch" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-navbar" type="submit">
             <i class="fas fa-search"></i>
