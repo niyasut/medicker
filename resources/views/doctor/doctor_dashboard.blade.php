@@ -159,6 +159,7 @@
                               </td>
                               <td>
                                 <input type="text" name='instruction[]' placeholder='instruction' class="form-control"/>
+                              <input type="hidden" id="custId" name="pidhid" value="{{$pid}}">
                                 </td>
                              
                           </tr>

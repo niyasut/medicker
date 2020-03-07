@@ -116,7 +116,7 @@ class HomeController extends Controller
     
             public function addprescription(Request $request){
              
-               $patientid =   request()->input('$patientidsearch');
+               $patientid =   request()->input('pidhid');
                 // $patientidss = request()->input('patientidsearch');
                 
                
