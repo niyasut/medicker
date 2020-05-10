@@ -54,7 +54,7 @@
       
     {{-- <form method="POST" action="{{url("\doctor.doctor_dashboard")}}"> --}}
       <form  action={{'patient_details'}} method="GET">
-        {{ csrf_field() }}
+        {{-- {{ csrf_field() }} --}}
             <div class="input-group">
             <input type="search" class="form-control" placeholder="Enter your patient id" name="patientidsearch" value="{{ request()->input('patientidsearch')}}" aria-label="Search">
               

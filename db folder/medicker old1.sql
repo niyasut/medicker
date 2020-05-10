@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2020 at 10:02 AM
+-- Generation Time: Feb 23, 2020 at 06:10 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -141,8 +141,7 @@ CREATE TABLE `patient_details` (
 
 INSERT INTO `patient_details` (`id`, `patient_id`, `mobile`, `age`, `gender`, `blood_group`, `height`, `weight`, `bp`, `address`) VALUES
 (1, 1234567890, '1234567890', '20', 'MALE', 'A+ve', '120', 50, 120, 'Valanchery'),
-(5, 1234567920, '784573453', '13', 'female', 'ab+ve', '120', 28, 100, 'fkgkjdfgdfghdgefgdf'),
-(6, 1234567913, '09020575767', '24', 'male', 'b+ve', '23', 43, 55, 'qqwweee');
+(5, 1234567920, '784573453', '13', 'female', 'ab+ve', '120', 28, 100, 'fkgkjdfgdfghdgefgdf');
 
 -- --------------------------------------------------------
 
@@ -153,48 +152,20 @@ INSERT INTO `patient_details` (`id`, `patient_id`, `mobile`, `age`, `gender`, `b
 CREATE TABLE `prescriptions` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `pre_id` bigint(20) UNSIGNED NOT NULL,
-  `precode` int(20) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp(),
-  `time` time NOT NULL DEFAULT current_timestamp(),
-  `drug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dosage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `frequency` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `days` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `instruction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `date` timestamp(6) NOT NULL DEFAULT current_timestamp(6),
+  `drug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dosage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `frequency` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `days` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `instruction` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `prescriptions`
 --
 
-INSERT INTO `prescriptions` (`id`, `pre_id`, `precode`, `date`, `time`, `drug`, `dosage`, `frequency`, `days`, `instruction`) VALUES
-(133, 1234567920, 2, '2020-03-21', '16:32:25', 'paracitamol', '500mg', '3 times', '10', 'after food'),
-(134, 1234567920, 2, '2020-03-21', '16:32:25', 'destrict', '250mg', '2 time', '20 days', 'after food');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pre_id`
---
-
-CREATE TABLE `pre_id` (
-  `id` bigint(20) NOT NULL,
-  `pre_code` int(20) NOT NULL,
-  `user_id` int(50) NOT NULL,
-  `doctor_id` int(20) NOT NULL,
-  `doctor_name` varchar(255) NOT NULL,
-  `degree` varchar(255) NOT NULL,
-  `hospital` varchar(255) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pre_id`
---
-
-INSERT INTO `pre_id` (`id`, `pre_code`, `user_id`, `doctor_id`, `doctor_name`, `degree`, `hospital`, `date`) VALUES
-(1, 1, 0, 0, '', 'mbbs', '0', '0000-00-00'),
-(49, 2, 1234567920, 1234567913, 'Nabeel kt', 'MBBS', 'KMS Hospital', '2020-03-21');
+INSERT INTO `prescriptions` (`id`, `pre_id`, `date`, `drug`, `dosage`, `frequency`, `days`, `instruction`) VALUES
+(1, 1234567890, '2020-02-13 04:46:13.289289', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -222,11 +193,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `usertype`, `created_at`, `updated_at`) VALUES
 (2, 'NIYAS UT', 'admin', 'niyasut@gmail.com', 'avatar.jpg', NULL, '$2y$10$SRkISqna7uP27wiRAt2rse.6fngx2Y2uHNV.f5MwwokCEC1SpIMWK', NULL, 'admin', '2020-02-05 01:22:19', '2020-02-05 01:22:19'),
-(1234567890, 'irfan k', 'patient', 'irfanvalnchery786@gmail.com', 'avatar.jpg', NULL, '$2y$10$SRkISqna7uP27wiRAt2rse.6fngx2Y2uHNV.f5MwwokCEC1SpIMWK', NULL, 'patient', '2020-02-05 02:48:41', '2020-02-22 07:57:05'),
+(1234567890, 'irfan k', 'patient', 'irfanvalnchery786@gmail.com', 'avatar.jpg', NULL, '$2y$10$IJfzFQbH5DvUP5jF8F3mFee424AHFyenwFxLmGoCqs9/MGKaa0jli', NULL, 'patient', '2020-02-05 02:48:41', '2020-02-22 07:57:05'),
 (1234567913, 'Nabeel kt', 'doctor', 'nabeelkt@gmail.com', '1582438937.jpg', NULL, '$2y$10$onDZgnnvG7lTJCM/E1b83.RrA63tVxD7IQk0AEPW4hJOnNErP6quS', NULL, 'doctor', '2020-02-22 06:46:41', '2020-02-23 00:52:18'),
-(1234567920, 'shada', 'shada', 'shada@gmail.com', 'avatar.jpg', NULL, '$2y$10$yyKXER3qAia8F1P.cGeuK.Lw0MkucqnjhB.fCTlfZZ7WYX8WCwpz6', NULL, 'patient', '2020-02-22 09:30:39', '2020-02-22 09:30:39'),
-(1234567921, 'lab', 'lab', 'lab@hmail.com', 'avatar.jpg', NULL, '$2y$10$q9o8QPFibHUhwTnEPy9R4.nX5Y0b6.CJozf.YbV5IFoWm6z/rzsE6', NULL, 'doctor', '2020-04-04 01:27:27', '2020-04-04 01:27:27'),
-(1234567922, 'lab', 'lab', 'lab@hmail.com', 'avatar.jpg', NULL, '$2y$10$JV8YWrBMzfnwg9MDYKiglu/L7OEPDoYd9mN..LJMzHxU1wmrqtM4y', NULL, 'doctor', '2020-04-04 01:28:10', '2020-04-04 01:28:10');
+(1234567920, 'shada', 'shada', 'shada@gmail.com', 'avatar.jpg', NULL, '$2y$10$yyKXER3qAia8F1P.cGeuK.Lw0MkucqnjhB.fCTlfZZ7WYX8WCwpz6', NULL, 'patient', '2020-02-22 09:30:39', '2020-02-22 09:30:39');
 
 --
 -- Indexes for dumped tables
@@ -275,16 +244,7 @@ ALTER TABLE `patient_details`
 --
 ALTER TABLE `prescriptions`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `pre_id` (`pre_id`),
-  ADD KEY `precode` (`precode`);
-
---
--- Indexes for table `pre_id`
---
-ALTER TABLE `pre_id`
-  ADD PRIMARY KEY (`id`) USING BTREE,
-  ADD UNIQUE KEY `pre_code` (`pre_code`),
-  ADD KEY `pre_code_2` (`pre_code`);
+  ADD KEY `prescriptions_pre_id_foreign` (`pre_id`);
 
 --
 -- Indexes for table `users`
@@ -324,25 +284,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `patient_details`
 --
 ALTER TABLE `patient_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `prescriptions`
 --
 ALTER TABLE `prescriptions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
-
---
--- AUTO_INCREMENT for table `pre_id`
---
-ALTER TABLE `pre_id`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1234567923;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1234567921;
 
 --
 -- Constraints for dumped tables
@@ -364,8 +318,7 @@ ALTER TABLE `patient_details`
 -- Constraints for table `prescriptions`
 --
 ALTER TABLE `prescriptions`
-  ADD CONSTRAINT `prescriptions_ibfk_1` FOREIGN KEY (`pre_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `prescriptions_ibfk_2` FOREIGN KEY (`precode`) REFERENCES `pre_id` (`pre_code`);
+  ADD CONSTRAINT `prescriptions_pre_id_foreign` FOREIGN KEY (`pre_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

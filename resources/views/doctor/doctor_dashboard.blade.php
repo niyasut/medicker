@@ -1,4 +1,4 @@
-@extends('layouts.doctor')
+@extends('layouts.d_patient_search')
 @section('title', ' - Doctor Dashboard')
 @section('content')
 @section('name', 'Patient Details')
@@ -85,7 +85,10 @@
             <h6 class="card-text">age : {{$pidsearch->patient->age}}</h6>
             <h6 class="card-text">Sex :{{$pidsearch->patient->sex}}</h6>
             <h6 class="card-text">Blood Group :{{$pidsearch->patient->blood_group}}</h6>
-            <h6 class="card-text">Patient ID :{{$pid=request()->input('patientidsearch')}}</h6>
+            {{-- <h6 class="card-text">Blood Group :{{$pidsearch->id}}</h6> --}}
+            <h6 class="card-text">Patient ID :{{$id=$pidsearch->id}}</h6>
+            <input type="hidden" id="custId" name="custId" value="{{$idq=$pidsearch->id}}">
+            
           </div>
           
           </div>
@@ -159,8 +162,13 @@
                               </td>
                               <td>
                                 <input type="text" name='instruction[]' placeholder='instruction' class="form-control"/>
-                              <input type="hidden" id="custId" name="pidhid" value="{{$pid}}">
+                              <input type="hidden" id="custId" name="pidhid" value="{{$pidsearch->id}}">
+                              <input type="hidden" id="custId" name="doctorname" value="{{Auth::user()->name}}">
+                              <input type="hidden" id="custId" name="hospitalname" value="{{Auth::user()->doctor->hospital}}">
+                              <input type="hidden" id="custId" name="precode" value="">
+                              <input type="hidden" id="custId" name="docid" value="{{Auth::user()->id}}">
                                 </td>
+                                
                              
                           </tr>
                           <tr id='addr1'></tr>
@@ -170,7 +178,7 @@
           </div>
           <a id="add_row" class="btn btn-default pull-left">Add Row</a>
           <a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
-          <input type="submit" value="submit">
+          <input class="pull-right btn btn-default " type="submit" value="submit">
       </div>
     </form>
 

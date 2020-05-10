@@ -47,6 +47,18 @@ class LoginController extends Controller
         return 'patient_dashboard';
 
         }
+        elseif(auth::user()->usertype == 'lab')
+        {
+
+        return 'lab_dashboard';
+
+        }
+        elseif(auth::user()->usertype == 'pharmacy')
+        {
+
+        return 'pharmacy_dashboard';
+
+        }
         else{
             return '/';
         }

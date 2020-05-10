@@ -73,10 +73,16 @@ use App\Http\Controllers\HomeController;
     route::get('/patient_details', 'HomeController@patientidsearch');
     Route::post('/doctor_dashboard', 'HomeController@updateavatar');
     Route::put('/addprescription','HomeController@addprescription');
+    Route::get('/listofprescriptions','HomeController@listofprescriptions');
+    // Route::get('/prescription','HomeController@prescriptionshow');
+    route::get('/prescription/{id}', 'HomeController@preshow');
 });
 // ......................patient auth........................
     route::group(['middleware' => ['auth','patient']], function(){
     Route::get('/patient_dashboard', 'PatientController@index');
+    Route::get('/prescriptions', 'PatientController@preshow');
+    Route::get('/showprescription/{id}', 'PatientController@showpre');
+    Route::get('/profile', 'PatientController@profile');
     
     
   

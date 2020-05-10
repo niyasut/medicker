@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Pre_id;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use App\Http\Requests;
+use App\Prescriptions;
 use App\doctors_details;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Prescriptions;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\Console\Input\Input;
+
+
 
 class HomeController extends Controller
 {
@@ -29,7 +34,10 @@ class HomeController extends Controller
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
+     * 
      */
+
+   
     public function index()
     {
         
@@ -76,9 +84,14 @@ class HomeController extends Controller
 
     public function patientidsearch(Request $request){
         $patientid = $request->input('patientidsearch');
+        // Session::flash('patientid', $patientid);
+        Session::put('patientid', $patientid);
+      
+      
         $pidsearch = User::where('id',$patientid)->get();
-
-
+        $predetails = Prescriptions::where('pre_id',$patientid)->get();
+        Session::put('predetails', $predetails);
+       
         if( $pidsearch->isEmpty() ){
             return Redirect::back();
         }else{
@@ -88,12 +101,13 @@ class HomeController extends Controller
             
             ]);
 
-        $pidget = request()->input('patientidsearch');
+        // $pidget = request()->input('patientidsearch');
 
-         $pidsearch = User::where('id',$pidget)->get();
-
+        //  $pidsearch = User::where('id',$pidget)->get();
+  
+        
+        return view('doctor.doctor_dashboard')->with('pidsearch',$pidsearch );
        
-        return view('doctor.doctor_dashboard')->with('pidsearch',$pidsearch);
         }
 
        
@@ -116,8 +130,9 @@ class HomeController extends Controller
     
             public function addprescription(Request $request){
              
-               $patientid =   request()->input('pidhid');
-                // $patientidss = request()->input('patientidsearch');
+      $patientid =   request()->input('pidhid');
+      $dname =   request()->input('doctorname');
+                $dhospital= request()->input('hospitalname');
                 
                
                $drug = $request->input('drug');
@@ -125,9 +140,26 @@ class HomeController extends Controller
                $frequency = $request->input('frequency');
                $days = $request->input('days');
                $instruction = $request->input('instruction');
-               
+               $pres =   request()->input('pidhid');
                 // $drug = Input::get('drug');
-       
+                $precode =   request()->input('precode');
+                $docid =   request()->input('docid');
+                $pres = new Pre_id();
+      
+             
+                // $ss   = $pres = sprintf('Comp-%03d', $rt);
+
+         $id      = Pre_id::orderBy("id","DESC")->take(1)->first()->id + 1;
+      
+        //  $pres->id  = $id;
+         $ss   =        $pres->pre_code  = $id;
+         $pres->user_id  = $patientid;
+         $pres->doctor_id  = $docid;
+         $pres->doctor_name =  $dname;
+         $pres->hospital =  $dhospital;
+                // $ss   = $pres->pre_code  = IdGenerator::generate(['table' => 'pre_id', 'length' => 10, 'prefix' =>'100']);
+                // $ss   = $pres = sprintf('Comp-%03d', $pres->id);
+                $pres->save();
             for($i=0; $i<count($drug); $i++)
             {
                 
@@ -135,6 +167,8 @@ class HomeController extends Controller
                 
                 // $pre->id = 1;
                 $pre->pre_id =  $patientid;
+                $pre->precode =  $ss;
+              
                 $pre->drug = $drug[$i];   
                 $pre->dosage = $dosage[$i];
                 $pre->frequency = $frequency[$i];  
@@ -146,7 +180,56 @@ class HomeController extends Controller
            
             return Redirect::back()->with('status', 'prescription added');
             // return redirect('dd ($patientid)');
+         
+    }
 
+    public function listofprescriptions(Request $request)
+    {
+      
+    //    $users= new Prescriptions();
+        //  $users = Prescriptions::all();
+        
+       $idss =Session::get('patientid');
+    //    $idq = $idss->;
+       $alldatasession =Session::get('predetails');
+        // $idss = $request->session()->get('patientid');
+        
+        $pidsearch = Prescriptions::where('pre_id',$idss)->get();
+        $alldet = Pre_id::where('user_id',$idss)->get();
+        
+        // Session::get('patientid');
+
+        $users =   $pidsearch;
+        // return view('doctor.pre_list')->with('users' , $users)->with('alldatasession' , $alldatasession);
+        return view('doctor.pre_list' ,compact('alldet','users','idss') );
+    }
+
+    public function prescriptionshow(Request $request )
+    {
+        
+        $patientid = Session::get('patientid');
+    
+      
+      
+        $pidsearch = User::where('id',$patientid)->get();
+        $predetails = Prescriptions::where('pre_id',$patientid)->get();
+   
+       
+       
+        
+        return view('doctor.pre_show', compact('pidsearch','predetails'));
+    }
+
+    public function preshow(Request $request ,$id){
+        // $patientid = $id;
+        $patientid = Session::get('patientid');
+    
+      
+      
+        $pidsearch = User::where('id',$patientid)->get();
+        $predetails = Prescriptions::where('precode',$id)->get();
+        $preiddetails = Pre_id::where('pre_code',$id)->get();
+        return view('doctor.pre_show', compact('pidsearch','predetails','id','preiddetails'));
     }
     
 }
